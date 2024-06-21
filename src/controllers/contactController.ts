@@ -30,7 +30,7 @@ const identifyContact = async (req: Request, res: Response) => {
     });
 
     // Log the found contacts for debugging
-    console.log("contacts", contacts);
+    // console.log("contacts", contacts);
 
     // Find contacts matching both email and phoneNumber (logical AND)
     const contactsAnd = await Contact.findAll({
@@ -40,7 +40,7 @@ const identifyContact = async (req: Request, res: Response) => {
     });
 
     // Log the contacts found with AND condition for debugging
-    console.log("contactsAnd", contactsAnd);
+    // console.log("contactsAnd", contactsAnd);
 
     // If no contacts are found, create a new primary contact
     if (contacts.length === 0) {
@@ -69,8 +69,8 @@ const identifyContact = async (req: Request, res: Response) => {
     );
 
     // Log primary and secondary contacts for debugging
-    console.log("primaryContact", primaryContact);
-    console.log("secondaryContact", secondaryContact);
+    // console.log("primaryContact", primaryContact);
+    // console.log("secondaryContact", secondaryContact);
 
     // If no primary contact but there's a secondary contact, consolidate related contacts
     if (!primaryContact && secondaryContact) {
