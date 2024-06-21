@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import Contact from "../models/contact";
 import { Op } from "sequelize";
+import { isValidEmail, isValidPhoneNumber } from "../utils/validations";
 
 const identifyContact = async (req: Request, res: Response) => {
   const { email, phoneNumber } = req.body;
@@ -11,7 +12,15 @@ const identifyContact = async (req: Request, res: Response) => {
       .status(400)
       .json({ error: "At least one of email or phoneNumber must be provided" });
   }
+  // Validate email format if provided
+  if (email && !isValidEmail(email)) {
+    return res.status(400).json({ error: "Invalid email format" });
+  }
 
+  // Validate phone number format if provided
+  if (phoneNumber && !isValidPhoneNumber(phoneNumber)) {
+    return res.status(400).json({ error: "Invalid phone number format" });
+  }
   // Prepare the WHERE clause based on provided inputs
   const whereClause: any[] = [];
   if (email !== undefined) {
