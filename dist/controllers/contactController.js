@@ -39,7 +39,7 @@ const identifyContact = (req, res) => __awaiter(void 0, void 0, void 0, function
             },
         });
         // Log the found contacts for debugging
-        console.log("contacts", contacts);
+        // console.log("contacts", contacts);
         // Find contacts matching both email and phoneNumber (logical AND)
         const contactsAnd = yield contact_1.default.findAll({
             where: {
@@ -47,7 +47,7 @@ const identifyContact = (req, res) => __awaiter(void 0, void 0, void 0, function
             },
         });
         // Log the contacts found with AND condition for debugging
-        console.log("contactsAnd", contactsAnd);
+        // console.log("contactsAnd", contactsAnd);
         // If no contacts are found, create a new primary contact
         if (contacts.length === 0) {
             const newContact = yield contact_1.default.create({
@@ -68,8 +68,8 @@ const identifyContact = (req, res) => __awaiter(void 0, void 0, void 0, function
         let primaryContact = contacts.find((contact) => contact.linkPrecedence === "primary");
         let secondaryContact = contacts.find((contact) => contact.linkPrecedence === "secondary");
         // Log primary and secondary contacts for debugging
-        console.log("primaryContact", primaryContact);
-        console.log("secondaryContact", secondaryContact);
+        // console.log("primaryContact", primaryContact);
+        // console.log("secondaryContact", secondaryContact);
         // If no primary contact but there's a secondary contact, consolidate related contacts
         if (!primaryContact && secondaryContact) {
             const allRelatedContacts = yield contact_1.default.findAll({

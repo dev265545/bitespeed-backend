@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use("/api", identifyRoute);
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.DB_PORT || 3002;
 
 sequelize.sync().then(async () => {
   app.listen(PORT, async () => {

@@ -31,8 +31,10 @@ The API is deployed at: [https://bitespeed-backend-ern2.onrender.com](https://bi
   "phoneNumber": "string"
 }
 ```
+
 - Either email or phoneNumber must be provided.
-Response Body
+  Response Body
+
 ```json
 {
   "contact": {
@@ -43,22 +45,24 @@ Response Body
   }
 }
 ```
+
 # Running the Project Locally
 
 ## Prerequisites
+
 - Node.js installed (version 14 or later)
 - PostgreSQL installed and running
 
 ## Steps
 
 ### Clone the Repository
+
 ```sh
 git clone https://github.com/yourusername/bitespeed-backend.git
 cd bitespeed-backend
 ```
+
 ### Install Dependencies
-
-
 
 Copy code
 
@@ -76,15 +80,12 @@ DB_USER=your_db_user
 DB_PASSWORD=your_db_password
 DB_HOST=your_db_host
 DB_PORT=your_db_port
+DB_DIALECT=postgres
 ```
 
 ### Run Migrations
 
 Make sure your database is created and then run the migrations:
-
-
-
-
 
 `npx sequelize-cli db:migrate`
 
@@ -94,8 +95,7 @@ Make sure your database is created and then run the migrations:
 
 The server will start on <http://localhost:3000>.
 
-Example Request
----------------
+## Example Request
 
 To test the API locally, you can use a tool like Postman or curl.
 
@@ -110,7 +110,6 @@ To test the API locally, you can use a tool like Postman or curl.
 3.  Set the URL to <http://localhost:3000/api/identify>.
 4.  Set the `Content-Type` header to `application/json`.
 5.  In the body, use raw JSON format to send the request:
-
 
 ```json
 {

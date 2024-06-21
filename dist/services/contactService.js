@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const contact_1 = __importDefault(require("../models/contact"));
+// Build For Testing Purpose insert a new Contact -  Not using currently
 function insertContact(data) {
     return __awaiter(this, void 0, void 0, function* () {
         const { email, phoneNumber } = data;

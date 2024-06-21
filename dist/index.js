@@ -18,18 +18,9 @@ const identify_1 = __importDefault(require("./routes/identify"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use("/api", identify_1.default);
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.DB_PORT || 3002;
 database_1.default.sync().then(() => __awaiter(void 0, void 0, void 0, function* () {
     app.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
         console.log(`Server is running on port ${PORT}`);
-        // Example data to insert
-        const exampleData1 = {
-            email: "lorraine@hillvalley.edu",
-            phoneNumber: "123456",
-        };
-        const exampleData2 = {
-            email: "mcfly@hillvalley.edu",
-            phoneNumber: "123456",
-        };
     }));
 }));
