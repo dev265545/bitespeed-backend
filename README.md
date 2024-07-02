@@ -1,4 +1,11 @@
 # Bitespeed Backend Task: Identity Reconciliation
+```
+Note : I am using Render.com for deployment and I am using the free tier. So it gets spindown with inactivity,
+which can delay requests by 50 seconds or more.So please wait for 50 seconds for getting to initial request
+and then it will work fine. Sorry for this issue.
+```
+
+> **_NOTE:_** You can use the /api-docs to try the api ->   [Link to Api Documentation](https://bitespeed-backend-ern2.onrender.com/api-docs/)
 
 This project is a web service designed to identify and reconcile customer identities across multiple purchases. It tracks customer contact information in a relational database and consolidates contact data based on provided email or phone number.
 
